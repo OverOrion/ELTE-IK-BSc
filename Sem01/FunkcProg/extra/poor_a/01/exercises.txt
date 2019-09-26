@@ -1,0 +1,60 @@
+Funkcionális programozás 1. gyakorlat
+1. Töltsd le a fordítót innen és telepítsd fel!
+2. Hozz létre egy üres .hs kiterjesztésű fájlt! Definiálj egy
+egész értékű változót!
+3. Töltsd be a fájlt a ghci-be!
+Tipp: a betöltés parancsa :l. Egyébként a ghci elfogadja
+argumentumként a betöltendő fájlt: ghci First.hs.
+4. Definiálj egy szöveg értékű változót!
+5. Töltsd be újra a fájlt!
+Tipp: az újratöltés parancsa a :r.
+6. Definiálj egy függvényt, mely paraméterének eggyel megnövelt értékét adja eredményül!
+inc 5 == 6
+inc 0 == 1
+inc (-5) == (-4)
+7. Definiálj egy függvényt, mely eldönti, hogy egy egész szám
+páros-e! Mivel even már létezik Haskellben, legyen a neve
+even'!
+even' 2
+not (even' 3)
+even' (-4)
+Tipp: a maradékképzés függvénye a mod.
+8. Definiálj egy függvényt, mely eldönti, hogy egy egész szám
+páratlan-e! Mivel odd már létezik Haskellben, legyen a
+neve odd'!
+not (odd' 2)
+odd' 3
+not (odd' (-4))
+9. Lehetne másképp is definiálni az odd'-t? Használd az
+even' függvényt!
+10. Definiálj egy függvényt, mely megvizsgálja, hogy egy egész
+szám oszt-e egy másikat!
+divides 2 4
+not (divides 4 2)
+11. Definiálj egy függvényt, mely kiszámolja egy téglalap
+területét két oldalának hosszából!
+area 6 10 == 60
+12. Definiálj egy függvényt, mely megállapítja, megszerkeszthetőe egy háromszög!
+triangleSides 2 1 2
+not (triangleSides 3 4 1)
+Tipp: a logikai operátorok: && és ||. A relációs operátorok: > < >= <= == és /=.
+13. Definiálj egy függvényt, mely megmondja három egész
+számról, hogy azok pitagoraszi számhármasok-e!
+pythagoreanTriple 3 4 5
+pythagoreanTriple 5 3 4
+not (pythagoreanTriple 2 3 4)
+Tipp: a hatványozás operátora a ^. Például 2 ^ 3.
+14. Állapítsd meg egy évszámról, hogy szökőév-e! Egy év
+szökőévnek számít, ha 4-gyel osztható és 100-zal nem, de
+a 400-zal oszthatóak ugyancsak szökőévek. Például:
+• 1992, 1996, 2012, 2016 szökőévek: oszthatók 4-gyel,
+de 100-zal nem.
+• 1700, 1800, 1900 nem szökőév: osztható 4-gyel, de
+100-zal is.
+• 1600, 2000 szökőév: osztható 100-zal, de 400-zal is.
+isLeapYear 1992
+isLeapYear 1996
+isLeapYear 1600
+isLeapYear 2000
+not (isLeapYear 1700)
+not (isLeapYear 1800)
