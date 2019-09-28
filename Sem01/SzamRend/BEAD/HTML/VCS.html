@@ -25,11 +25,139 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
     <p style="text-align: left;"><br>
     </p>
     <p style="text-align: left;">A verziókezelő rendszerek lehetővé teszik a
-      fejlesztő(k) számára, hogy a forráskóduk különböző változásait nyomon
+      fejlesztő(k) számára, hogy a projekt különböző változásait nyomon
       követhessék, és egy esetleges hiba esetén egy régebbi verzióra
       visszaálljanak. Ezen felül a csapatos projekt munkát nagyban segíti,
-      hiszen (optimális esetben) mindenki látja, hogy hol tart a közös projekt,
-      nem pedig csak a náluk lévő fájlok állnak rendelkezésre.</p>
+      hiszen (optimális esetben) mindenki látja, hogy hol tartanak, nem pedig
+      csak a náluk lévő fájlok állnak rendelkezésre. <a href="https://www.openhub.net/repositories/compare">Jelenleg</a>
+      a két leginkább elterjedt verziókezelő rendszer a Git és az SVN. A Git
+      elosztott, míg az SVN központosított verziókezelő rendszer modell alapján
+      épül fe. A legnagyobb különbség közöttük, hogy a git használata során egy
+      offline állapotú verzióval dolgoznak, majd a munkafolyamat végén
+      szinkronizálják az online verzióval. Ezzel szemben SVN esetén csak a
+      szerkesztés alatt álló fájlok töltődnek le a fejlesztő gépére és
+      folyamatosan online kell lennie, hogy a szerver géppel dolgozhasson. </p>
+    <p style="text-align: left;"><br>
+    </p>
+    <p style="text-align: left;">Alapfogalmak:</p>
+    <table style="width: 346px; height: 569px;" border="1">
+      <tbody>
+        <tr>
+          <td>
+            <ul>
+              <li>Branch</li>
+            </ul>
+          </td>
+          <td>A projekt különböző nagyobb elágazásai. Az alapértelmezett branch
+            a master, ezen felül gyakran van még dev(eloper), staging branch is.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>
+                <meta http-equiv="content-type" content="text/html; charset=utf-8">
+                Checkout</li>
+            </ul>
+          </td>
+          <td>Helyi, offline másolat létrehozása. Megadható, hogy melyik verziót
+            töltsük le.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Clone</li>
+            </ul>
+          </td>
+          <td>Repostiroy létrehozása amely egy másik (már létező) repository
+            előzményeit is letölti.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Repository</li>
+            </ul>
+          </td>
+          <td>Egy olyan elérhetőség, ahol a fájlok jelenlegi állapota és
+            előzményei láthatóak.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Commit</li>
+            </ul>
+          </td>
+          <td>Változások beleillesztése a távoli gépen található repositoryba.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Conflict</li>
+            </ul>
+          </td>
+          <td>Abban az esetben lép fel konfliktus, ha ugyanazon fájlt többen is
+            szerkesztik és a rendszer nem tudja megállapítani, hogy melyik
+            legyen a megfelelő. Vagy a változatok közül kell választani vagy
+            pedig kombinálni kell őket.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Export</li>
+            </ul>
+          </td>
+          <td>Hasonló a checkouthoz, de ennél nem lesznek verziókezelő adatok
+            átmásolva.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>
+                <meta http-equiv="content-type" content="text/html; charset=utf-8">
+                Initialize</li>
+            </ul>
+          </td>
+          <td>Egy új, üres repostiroy létrehozása.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Pull/push</li>
+            </ul>
+          </td>
+          <td>Kiadások letöltése/feltöltése egy repositoryból egy másikba.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Share</li>
+            </ul>
+          </td>
+          <td>Egy fájl több branchben való elérhetővé tétele. Ha az egyik helyen
+            módosul, akkor a többi branchben is módosulni fog.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Tag</li>
+            </ul>
+          </td>
+          <td>Egy fontos pillanatnyi állapotra mutató referencia, amely több
+            fájlon átívelő. Általában felhasználóbarát módon szokták megenevezni
+            őket.</td>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>Trunk</li>
+            </ul>
+          </td>
+          <td>Egy olyan egyedi fejlesztési vonal, amely nem szerepel egyik
+            branch között sem. Baseline/Mainline/Master néven is ismert.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="text-align: left;"><br>
+    </p>
     <p> </p>
   </body>
 </html>
