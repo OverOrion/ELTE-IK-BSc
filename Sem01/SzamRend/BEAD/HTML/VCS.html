@@ -17,6 +17,16 @@ http://developer.yahoo.net/yui/license.txt
 version: 2.6.0
 */
 h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em 0;}h1,h2,h3,h4,h5,h6,strong{font-weight:bold;}abbr,acronym{border-bottom:1px dotted #000;cursor:help;} em{font-style:italic;}blockquote,ul,ol,dl{margin:1em;}ol,ul,dl{margin-left:2em;}ol li{list-style:decimal outside;}ul li{list-style:disc outside;}dl dd{margin-left:1em;}th,td{border:1px solid #000;padding:.5em;}th{font-weight:bold;text-align:center;}caption{margin-bottom:.5em;text-align:center;}p,fieldset,table,pre{margin-bottom:1em;}input[type=text],input[type=password],textarea{width:12.25em;*width:11.9em;}
+.style1 {
+				text-decoration: underline;
+}
+.style2 {
+				text-align: center;
+}
+.style3 {
+				border-style: solid;
+				border-width: 1px;
+}
 </style><meta name="author" content="la68t1">
     <meta name="generator" content="BlueGriffon wysiwyg editor">
   </head>
@@ -30,25 +40,38 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
       visszaálljanak. Ezen felül a csapatos projekt munkát nagyban segíti,
       hiszen (optimális esetben) mindenki látja, hogy hol tartanak, nem pedig
       csak a náluk lévő fájlok állnak rendelkezésre. <a href="https://www.openhub.net/repositories/compare">Jelenleg</a>
-      a két leginkább elterjedt verziókezelő rendszer a Git és az SVN. A Git
+      a két leginkább elterjedt verziókezelő rendszer a <strong>Git</strong> és az 
+	<strong>SVN</strong>. A Git
       elosztott, míg az SVN központosított verziókezelő rendszer modell alapján
       épül fe. A legnagyobb különbség közöttük, hogy a git használata során egy
       offline állapotú verzióval dolgoznak, majd a munkafolyamat végén
       szinkronizálják az online verzióval. Ezzel szemben SVN esetén csak a
       szerkesztés alatt álló fájlok töltődnek le a fejlesztő gépére és
       folyamatosan online kell lennie, hogy a szerver géppel dolgozhasson. </p>
+    <table style="width: 67%" align="center">
+					<tr>
+									<td class="style2">Centralized</td>
+									<td class="style2">Distributed</td>
+					</tr>
+					<tr>
+									<td>
+									<img src="src/centralized_example.png" width="520" height="346"></td>
+									<td>
+									<img src="src/distributed_example.png" width="520" height="405"></td>
+					</tr>
+	</table>
     <p style="text-align: left;"><br>
     </p>
     <p style="text-align: left;">Alapfogalmak:</p>
-    <table style="width: 346px; height: 569px;" border="1">
+    <table style="width: 80%; height: 569px;" class="style3">
       <tbody>
         <tr>
           <td>
             <ul>
-              <li>Branch</li>
+              <li class="style1">Branch</li>
             </ul>
           </td>
-          <td>A projekt különböző nagyobb elágazásai. Az alapértelmezett branch
+          <td class="style1">A projekt különböző nagyobb elágazásai. Az alapértelmezett branch
             a master, ezen felül gyakran van még dev(eloper), staging branch is.</td>
         </tr>
         <tr>
@@ -56,45 +79,45 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
             <ul>
               <li>
                 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-                Checkout</li>
+                <span class="style1">Checkout</span></li>
             </ul>
           </td>
-          <td>Helyi, offline másolat létrehozása. Megadható, hogy melyik verziót
+          <td class="style1">Helyi, offline másolat létrehozása. Megadható, hogy melyik verziót
             töltsük le.</td>
         </tr>
         <tr>
           <td>
             <ul>
-              <li>Clone</li>
+              <li class="style1">Clone</li>
             </ul>
           </td>
-          <td>Repostiroy létrehozása amely egy másik (már létező) repository
+          <td class="style1">Repostiroy létrehozása amely egy másik (már létező) repository
             előzményeit is letölti.</td>
         </tr>
         <tr>
           <td>
             <ul>
-              <li>Repository</li>
+              <li class="style1">Repository</li>
             </ul>
           </td>
-          <td>Egy olyan elérhetőség, ahol a fájlok jelenlegi állapota és
+          <td class="style1">Egy olyan elérhetőség, ahol a fájlok jelenlegi állapota és
             előzményei láthatóak.</td>
         </tr>
         <tr>
           <td>
             <ul>
-              <li>Commit</li>
+              <li class="style1">Commit</li>
             </ul>
           </td>
-          <td>Változások beleillesztése a távoli gépen található repositoryba.</td>
+          <td class="style1">Változások beleillesztése a távoli gépen található repositoryba.</td>
         </tr>
         <tr>
           <td>
             <ul>
-              <li>Conflict</li>
+              <li class="style1">Conflict</li>
             </ul>
           </td>
-          <td>Abban az esetben lép fel konfliktus, ha ugyanazon fájlt többen is
+          <td class="style1">Abban az esetben lép fel konfliktus, ha ugyanazon fájlt többen is
             szerkesztik és a rendszer nem tudja megállapítani, hogy melyik
             legyen a megfelelő. Vagy a változatok közül kell választani vagy
             pedig kombinálni kell őket.</td>
@@ -102,10 +125,10 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
         <tr>
           <td>
             <ul>
-              <li>Export</li>
+              <li class="style1">Export</li>
             </ul>
           </td>
-          <td>Hasonló a checkouthoz, de ennél nem lesznek verziókezelő adatok
+          <td class="style1">Hasonló a checkouthoz, de ennél nem lesznek verziókezelő adatok
             átmásolva.</td>
         </tr>
         <tr>
@@ -113,45 +136,45 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
             <ul>
               <li>
                 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-                Initialize</li>
+                <span class="style1">Initialize</span></li>
             </ul>
           </td>
-          <td>Egy új, üres repostiroy létrehozása.</td>
+          <td class="style1">Egy új, üres repostiroy létrehozása.</td>
         </tr>
         <tr>
           <td>
             <ul>
-              <li>Pull/push</li>
+              <li class="style1">Pull/push</li>
             </ul>
           </td>
-          <td>Kiadások letöltése/feltöltése egy repositoryból egy másikba.</td>
+          <td class="style1">Kiadások letöltése/feltöltése egy repositoryból egy másikba.</td>
         </tr>
         <tr>
           <td>
             <ul>
-              <li>Share</li>
+              <li class="style1">Share</li>
             </ul>
           </td>
-          <td>Egy fájl több branchben való elérhetővé tétele. Ha az egyik helyen
+          <td class="style1">Egy fájl több branchben való elérhetővé tétele. Ha az egyik helyen
             módosul, akkor a többi branchben is módosulni fog.</td>
         </tr>
         <tr>
           <td>
             <ul>
-              <li>Tag</li>
+              <li class="style1">Tag</li>
             </ul>
           </td>
-          <td>Egy fontos pillanatnyi állapotra mutató referencia, amely több
+          <td class="style1">Egy fontos pillanatnyi állapotra mutató referencia, amely több
             fájlon átívelő. Általában felhasználóbarát módon szokták megenevezni
             őket.</td>
         </tr>
         <tr>
           <td>
             <ul>
-              <li>Trunk</li>
+              <li class="style1">Trunk</li>
             </ul>
           </td>
-          <td>Egy olyan egyedi fejlesztési vonal, amely nem szerepel egyik
+          <td class="style1">Egy olyan egyedi fejlesztési vonal, amely nem szerepel egyik
             branch között sem. Baseline/Mainline/Master néven is ismert.</td>
         </tr>
       </tbody>
