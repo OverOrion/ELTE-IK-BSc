@@ -7,3 +7,5 @@ Sem01/ImProg/gyak/01/Fahrenheit-Celsius-Converter/.cabal-sandbox/x86_64-linux-gh
 Sem01/ImProg/gyak/01/Fahrenheit-Celsius-Converter/.cabal-sandbox/packages/00-index.cache
 Sem01/ImProg/gyak/01/Fahrenheit-Celsius-Converter/.cabal-sandbox/add-source-timestamps
 *.swp
+.vscode/c_cpp_properties.json
+.vscode/tasks.json
