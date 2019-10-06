@@ -4,23 +4,25 @@ import Data.Char
 --1 
 foo :: Num a => [(a, a, a)] -> a 
 foo [] = error "Empty list"
-foo [(_)] = error "Not enough data"
-foo [(_, _)] = error "Not enough data"
-foo [(a,_,c)] = (a+c)
+foo [a]= error "Not enough parameters"
+foo (_:(a, b, c):_) = a+c
 
 --2a 
-isValidNamePart :: String -> Bool 
-isValidNamePart (x:xs) =  and (isUpper x, [isLower c | c <-xs])
+isValidNamePart :: String -> Bool
+--isValidNamePart (n:ame) = isUpper n && all isLower ame
+isValidNamePart (n:ame) = isUpper n && and [ isLower co| co <- ame]
 
 --2b 
-isValidName :: String -> Bool 
-
+isValidName :: String -> Bool
+--isValidName fullName = all isValidNamePart [ part| part <- words (fullName)]
+isValidName fullName = and [isValidNamePart namepart | namepart<- words fullName]
+    where isValidNamePart (n:ame) = isUpper n && and [ isLower co| co <- ame]
 
 --3a 
-canPass :: String -> Bool 
+canPass :: String -> Bool
+canPass grades = sum([digitToInt i | i <- grades])>=12
 
 --3b 
-examinees :: [(String, String)] ->  [String]
-
-
-
+examinees :: [(String, String)] -> [String]
+examinees x = [name | (name, result) <- x, canPass result]
+    where canPass grades = sum([digitToInt i | i <- grades])>=12
