@@ -39,11 +39,16 @@ eqList :: Eq a => [a] -> [a] -> Bool
 eqList [] [] = True
 eqList [x] [y] = x == y
 eqList (x:xs) (y:ys) = x == y && eqList xs ys
+eqList _ _ = False
 
 --f8
 dropEvery3 :: [a] -> [a]
-dropEvery3 (x:y:z) = x : y : dropEvery3 z
+dropEvery3 [] = []
+dropEvery3 x = take 2 x ++ dropEvery3 (drop 3 x)
 
 --f9
-mapLength :: [[a]] -> [Int] 
-mapLength [x:xs] = length x : mapLength xs
+mapLength :: [[a]] -> [Int]
+mapLength [] = []
+mapLength [[]] = [0]
+mapLength [(x)] = [length x]
+mapLength (x:xs) = length x : mapLength xs
