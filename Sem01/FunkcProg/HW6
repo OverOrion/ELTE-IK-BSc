@@ -1,0 +1,38 @@
+module HW6 where
+--f1
+zip' :: [a] -> [b] -> [(a,b)]
+zip' (a:as) (b:bs) = (a,b) : zip' as bs
+zip'   _      _    = []
+
+--f2
+drop' :: Int -> [a] -> [a]
+drop' _ []               = []
+drop' n (x:xs)
+    | n <= 0             = (x:xs)
+    | otherwise          = drop (n-1)    xs
+    
+--f3
+insert' :: Ord a => a -> [a] -> [a]
+insert' n [] = [n]
+insert' n (x:xs)
+    | n > x  = x : (insert' n xs)
+    | n <= x = n : (x:xs)
+    
+--f4
+filterSumOfNeighbors :: (Eq a, Num a) => [a] -> [a]
+filterSumOfNeighbors (a:b:c:ds)
+    | a + c == b = b : filterSumOfNeighbors (b:c:ds)
+    | otherwise        =  filterSumOfNeighbors (b:c:ds)
+filterSumOfNeighbors _ = []
+    
+    
+--f5
+collatzLength :: Integer -> Integer
+collatzLength n = toInteger (length (collatzList n)) where 
+collatzList n
+    | n <= 0 = []
+    | n == 1 = [1]
+    | n > 1  = n : collatzList (collatz n) where
+collatz n 
+    | even n    =  n `div` 2
+    | otherwise = 3*n + 1
