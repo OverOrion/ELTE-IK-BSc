@@ -1,30 +1,32 @@
 #include <stdio.h>
-void decimal_to_roman (int num_){
-const char *roman_array[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX",
-"V", "IV", "I"};
-    while (num_ > 0) {
-        if (num_ > 1000){ printf("%s", roman_array[0]); num_-=1000;}
-		else if (num_ > 900) {printf("%s", roman_array[1]); num_-=900;}
-		else if (num_ > 500) {printf("%s", roman_array[2]); num_-=500;}
-		else if (num_ > 400) {printf("%s", roman_array[3]); num_-=400;}
-		else if (num_ > 100) {printf("%s", roman_array[4]); num_-=100;}
-		else if (num_ > 90) {printf("%s", roman_array[5]); num_-=90;}
-		else if (num_ > 50) {printf("%s", roman_array[6]); num_-=50;}
-		else if (num_ > 40) {printf("%s", roman_array[7]); num_-=40;}
-		else if (num_ > 10) {printf("%s", roman_array[8]); num_-=10;}
-		else if (num_ > 9) {printf("%s", roman_array[9]); num_-=9;}
-		else if (num_ > 5) {printf("%s", roman_array[10]); num_-=5;}
-		else if (num_ > 4) {printf("%s", roman_array[11]); num_-=4;}
-		else if (num_ > 0) {printf("%s", roman_array[12]); num_-=1;}
-		}
-		}
+void decimal_to_roman(int num_)
+{
+    const char *roman_array[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX",
+                                 "V", "IV", "I"};
+    const int numbers[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    while (num_ > 0)
+    {
+        for (int i = 0; i < (sizeof(numbers) / sizeof(numbers[0])); ++i)
+        {
+			int rem = num_ / numbers[i];
+            if (num_ / numbers[i] > 0)
+            {
+                for (int j = 0; j < rem; ++j)
+                {
+                    printf("%s", roman_array[i]);
+                }
+            }
+            num_ = num_ - rem * numbers[i];
+        }
+    }
+}
 
-
-int main(){
-	//input
-	int n;
-	printf("Enter decimal number: ");
-	scanf("%d", &n);
-	decimal_to_roman(n);
-	return 0;
+int main()
+{
+    //input
+    int n;
+    printf("Enter decimal number: ");
+    scanf("%d", &n);
+    decimal_to_roman(n);
+    return 0;
 }
