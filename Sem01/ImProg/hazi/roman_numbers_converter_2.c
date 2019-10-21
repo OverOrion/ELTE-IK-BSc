@@ -27,6 +27,8 @@ int main()
     int n;
     printf("Enter decimal number: ");
     scanf("%d", &n);
+	if (n < 4000){
     decimal_to_roman(n);
+	} else printf("Error, n can not be larger than 3999.");
     return 0;
 }
