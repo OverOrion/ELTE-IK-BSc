@@ -10,3 +10,5 @@ Sem01/ImProg/gyak/01/Fahrenheit-Celsius-Converter/.cabal-sandbox/add-source-time
 .vscode/c_cpp_properties.json
 .vscode/tasks.json
 *.json
+*.exe
+*.o
