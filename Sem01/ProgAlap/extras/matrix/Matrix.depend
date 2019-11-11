@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1542093920 source:/home/orion/Documents/GitHub/ELTE-IK-BSc/Sem01/ProgAlap/extras/matrix/main.cpp
+	<iostream>
+	<time.h>
+	<stdlib.h>
+	<sstream>
+
