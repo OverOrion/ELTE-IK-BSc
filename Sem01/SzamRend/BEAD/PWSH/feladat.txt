@@ -1,0 +1,1 @@
+Írjunk shell script programot, ami megadja egy megadott fájlt páros és páratlan soraiban lévő páros illetve páratlan számok összegét, majd az eredményt a standard outputra elhelyezi! Minden sorban legalább 2 szám van. A fájlt a bemeneten vagy paraméterként adjuk meg.
