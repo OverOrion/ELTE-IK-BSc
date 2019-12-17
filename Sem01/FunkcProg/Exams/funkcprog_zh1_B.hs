@@ -73,5 +73,5 @@ mapNE f (NE x xs) = NE (head $ map f (x:xs) ) (tail $ map f (x:xs))
 filterNE :: (a -> Bool) -> NonEmpty a -> Maybe (NonEmpty a)
 filterNE p (NE x xs)
   | null $ filter p (x:xs) = Nothing
-  | otherwise = Just $ NE (head $ filter p ([x])) (filter p xs)
+  | otherwise = Just $ NE (head $ filter p (x:xs)) (tail $ filter p (x:xs))
 
